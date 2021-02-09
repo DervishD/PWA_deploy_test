@@ -52,7 +52,7 @@ if ('serviceWorker' in navigator) {
             window.location.reload();
         });
 
-        navigator.serviceWorker.register('sw.js').then(registration => {
+        navigator.serviceWorker.register('sw.js', {scope: '/'}).then(registration => {
             // No controller for this page, nothing to do for now. FIXME
             if (!navigator.serviceWorker.controller) {
                 document.getElementById('debug').textContent = '(welcome)';
