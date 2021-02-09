@@ -14,7 +14,7 @@
 
   "icons": [
     {
-      "src": "/PWA_deploy_test/appicon.png",
+      "src": "appicon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -23,5 +23,5 @@
   "screenshots" : [],
 
   "scope" : "/",
-  "start_url": "/PWA_deploy_test/index.html"
+  "start_url": "index.html"
 }
