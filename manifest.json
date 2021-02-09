@@ -23,5 +23,5 @@
   "screenshots" : [],
 
   "scope" : "/PWA_deploy_test/",
-  "start_url": "/index.html"
+  "start_url": "index.html"
 }
