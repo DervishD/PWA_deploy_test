@@ -1,0 +1,189 @@
+/*
+    solarized palette:
+        base03    #002B36   L*a*b: 15 -12 -12   HSV: 193 100  21
+        base02    #073642   L*a*b: 20 -12 -12   HSV: 192  90  26
+        base01    #586E75   L*a*b: 45 -07 -07   HSV: 194  25  46
+        base00    #657B83   L*a*b: 50 -07 -07   HSV: 195  23  51
+        base0     #839496   L*a*b: 60 -06 -03   HSV: 186  13  59
+        base1     #93A1A1   L*a*b: 65 -05 -02   HSV: 180   9  63
+        base2     #EEE8D5   L*a*b: 92 -00  10   HSV:  44  11  93
+        base3     #FDF6E3   L*a*b: 97  00  10   HSV:  44  10  99
+        yellow    #B58900   L*a*b: 60  10  65   HSV:  45 100  71
+        orange    #CB4B16   L*a*b: 50  50  55   HSV:  18  89  80
+        red       #DC322F   L*a*b: 50  65  45   HSV:   1  79  86
+        magenta   #D33682   L*a*b: 50  65 -05   HSV: 331  74  83
+        violet    #6C71C4   L*a*b: 50  15 -45   HSV: 237  45  77
+        blue      #268BD2   L*a*b: 55 -10 -45   HSV: 205  82  82
+        cyan      #2AA198   L*a*b: 60 -35 -05   HSV: 175  74  63
+        green     #859900   L*a*b: 60 -20  65   HSV:  68 100  60
+*/
+
+@media (prefers-color-scheme: light) {
+    body {
+        color: #657B83;  /* base00 */
+        background-color: #FDF6E3;  /* base3 */
+    }
+    
+    div.banner {
+        color: #FDF6E3;  /* base3 */
+        background-color: #6C71C4;  /* violet */
+    }
+
+    ::selection {
+        color: #FDF6E3;  /* base3 */
+        background-color: rgba(101,123,131,0.99);  /* base00 */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #839496;  /* base0 */
+        background-color: #002B36;  /* base03 */
+    }
+
+    div.banner {
+        color: #002B36;  /* base03 */
+        background-color: #268BD2;  /* blue */
+    }
+
+    ::selection {
+        color: #002B36;  /* base03 */
+        background-color: rgba(131,148,150,0.99);  /* base0 */
+    }
+}         
+
+
+/* @media only screen and (orientation: landscape) { */
+/*   body { */
+/*     font-size: calc(1em + 1.5vw); */
+/*     line-height: calc(1.1em + 0.5vw) */
+/*   } */
+/* } */
+
+/* @media only screen and (orientation: portrait) { */
+/*   body { */
+/*     font-size: calc(1em + 1.5vh); */
+/*     line-height: calc(1.1em + 0.5vh) */
+/*   } */
+/* } */
+
+
+/* The purpose of this selector is being able to see the entire page layout in DevTools. */
+* {
+}
+
+:root {
+    font-family: "Noto Sans", sans-serif;
+    font-size : clamp(1em, 1vw + 1vh + .5vmin, 3em);  /* A good starting point... */
+    /* And some other alternatives... */
+    /*
+    font-size: calc(1vw + 1vh + .5vmin);
+    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
+    */
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 16vw;  /* Totally arbitrary... */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+div#status {
+    font-family: "Source Code Pro", monospace;
+    font-size: 0.75rem;
+    text-align: center;
+    margin: 2em;
+    padding: 1em;
+}
+
+div.toast {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 3rem;
+    align-items: center;
+    justify-items: start;
+    padding: 1rem;
+    visibility: hidden;  
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+    width: 100%;
+    height: auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div.toast_text {
+    grid-column: 1;
+    text-align: justify;
+}
+
+div.toast_actions {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 0.5rem;
+    justify-items: end;
+    grid-column: 2;
+}
+
+div.toast_action {
+    font-weight: bold;
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+
+/* banner test */
+div.banner {
+    visibility: hidden;  /* For now... */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1.5rem;
+    position: fixed;
+    padding: 1rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+} 
+
+div.bannertext {
+    flex-grow: 1;
+    margin: 0 0.5rem 0 0;
+    padding: 0;
+}
+
+
+/* This style is just TEMPORARY */
+div.banner button {
+    font-size: 1rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+    color: inherit;
+    cursor: pointer;
+    opacity: 75%;
+}
+
+div.banner button:hover {
+    filter: invert(100%);
+}
