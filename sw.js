@@ -15,7 +15,7 @@ function sleep(ms) {
 self.addEventListener('install', async event => {
     console.debug('Installing service worker for scope', self.registration.scope);
     //await new Promise(resolve => setTimeout(resolve, 5000));
-
+    let root = new URL(self.registration.scope).pathname;
     //self.skipWaiting()
     //    .then(() => {
     //        console.debug('New service worker skipWaited.')
@@ -23,7 +23,8 @@ self.addEventListener('install', async event => {
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
             //'/index.html',
-            'index.css',
+            root,
+            root + 'index.css',
             //'/index.js',
             //'/appicon.png',
             //'/favicon.ico',
