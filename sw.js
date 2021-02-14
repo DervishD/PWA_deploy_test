@@ -24,12 +24,11 @@ self.addEventListener('install', async event => {
         caches.open(static_cache).then(cache => cache.addAll([
             //'/index.html',
             root,
-            root + 'index.css',
+            'index.css',
             //'/index.js',
-            //'/appicon.png',
-            //'/favicon.ico',
-            //'manifest.json',
-            // FIXME Add fonts!!!!
+            '/appicon.png',
+            '/favicon.ico',
+            'manifest.json',
         ]))
     );
 });
