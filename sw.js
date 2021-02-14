@@ -15,22 +15,21 @@ function sleep(ms) {
 self.addEventListener('install', async event => {
     console.debug('Installing service worker for scope', self.registration.scope);
     //await new Promise(resolve => setTimeout(resolve, 5000));
-    let root = new URL(self.registration.scope).pathname;
+    //let root = new URL(self.registration.scope).pathname;
     //self.skipWaiting()
     //    .then(() => {
     //        console.debug('New service worker skipWaited.')
     //    });
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
-            //'/index.html',
-            '',
+            new URL(self.registration.scope).pathname,
             'index.css',
             'index.html',
-            //'/index.js',
+            //'index.js',
             'appicon.png',
             'favicon.ico',
             'manifest.json',
-        ].map(key=>root+key)))
+        ]))
     );
 });
 
