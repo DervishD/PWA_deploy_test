@@ -23,15 +23,14 @@ self.addEventListener('install', async event => {
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
             //'/index.html',
-            root,
-            root + 'index.css',
+            '',
+            'index.css',
             'index.html',
-            root + 'index.html',
             //'/index.js',
             'appicon.png',
             'favicon.ico',
             'manifest.json',
-        ]))
+        ].map(key=>root+key)))
     );
 });
 
