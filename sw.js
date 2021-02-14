@@ -26,8 +26,8 @@ self.addEventListener('install', async event => {
             root,
             'index.css',
             //'/index.js',
-            '/appicon.png',
-            '/favicon.ico',
+            'appicon.png',
+            'favicon.ico',
             'manifest.json',
         ]))
     );
