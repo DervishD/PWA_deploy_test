@@ -22,7 +22,8 @@ self.addEventListener('install', async event => {
         });
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
-            new URL(self.registration.scope).pathname,
+            //new URL(self.registration.scope).pathname,
+            '',
             'index.css',
             'index.html',
             //'index.js',
