@@ -20,7 +20,6 @@ self.addEventListener('install', async event => {
         .then(() => {
             console.debug('New service worker skipWaited.')
         });
-    return;
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
             '/',
