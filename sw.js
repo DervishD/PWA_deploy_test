@@ -14,12 +14,12 @@ function sleep(ms) {
 
 self.addEventListener('install', async event => {
     console.debug('Installing service worker.');
-    await new Promise(resolve => setTimeout(resolve, 5000));
+    //await new Promise(resolve => setTimeout(resolve, 5000));
 
-    self.skipWaiting()
-        .then(() => {
-            console.debug('New service worker skipWaited.')
-        });
+    //self.skipWaiting()
+    //    .then(() => {
+    //        console.debug('New service worker skipWaited.')
+    //    });
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
             '/',
