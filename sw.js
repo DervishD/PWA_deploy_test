@@ -59,8 +59,6 @@ self.addEventListener('activate', event => {
 // Fetch resources.
 self.addEventListener('fetch', event => {
     console.log('Fetching', event.request.url, 'in', selfidentity);
-    return;
-
 
     // if (event.request.url.includes('/version')) {
     //     event.respondWith(new Response(static_cache, {
@@ -72,7 +70,7 @@ self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request).then(response => {
             if (response) {
-                //console.log('Cache matched for', event.request.url);
+                console.log('Cache matched for', event.request.url);
                 //console.log('Revalidating from network', event.request.url);
 
                 // FIXME: this won't work, because the service worker may be killed BEFORE the fetch is completed.
@@ -91,7 +89,7 @@ self.addEventListener('fetch', event => {
                 }); */
                 return response;
             } else {
-                //console.log('Retrieving from network', event.request.url);
+                console.log('Retrieving from network', event.request.url);
                 return fetch(event.request);
                 /* return fetch(event.request).then(response => {
                     return sleep(3).then(() => {
