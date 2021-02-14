@@ -13,7 +13,7 @@ function sleep(ms) {
 
 
 self.addEventListener('install', async event => {
-    console.debug('Installing service worker.');
+    console.debug('Installing service worker for scope', self.registration.scope);
     //await new Promise(resolve => setTimeout(resolve, 5000));
 
     //self.skipWaiting()
