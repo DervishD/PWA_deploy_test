@@ -22,7 +22,7 @@ self.addEventListener('install', async event => {
     //    });
     event.waitUntil(
         caches.open(static_cache).then(cache => cache.addAll([
-            '/',
+            '/index.html',
             '/index.css',
             //'/index.js',
             '/appicon.png',
