@@ -57,8 +57,9 @@ self.addEventListener('activate', event => {
 
 // Fetch resources.
 self.addEventListener('fetch', event => {
-    return;
     console.log('Fetching', event.request.url, 'in', selfidentity);
+    return;
+
 
     // if (event.request.url.includes('/version')) {
     //     event.respondWith(new Response(static_cache, {
