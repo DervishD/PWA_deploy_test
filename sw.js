@@ -4,6 +4,7 @@
 var static_cache = 'v' + 'TMP';
 
 var selfidentity = 'SW 1';
+const staticCacheVersion = 1;
 
 const staticCachePrefix = `trujaman [${new URL(self.registration.scope).pathname}]`;
 const staticCache = `${staticCachePrefix} v${staticCacheVersion}`;
