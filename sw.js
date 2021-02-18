@@ -10,6 +10,8 @@ const staticCachePrefix = `trujaman [${new URL(self.registration.scope).pathname
 const staticCache = `${staticCachePrefix} v${staticCacheVersion}`;
 static_cache = staticCache;
 
+console.log(self);
+
 console.log(self.registration.scope, new URL(self.registration.scope).pathname);
 
 
