@@ -5,6 +5,8 @@ var static_cache = 'v' + 'TMP';
 
 var selfidentity = 'SW 1';
 
+console.log(self.registration.scope, new URL(self.registration.scope).pathname);
+
 
 // FIXME helper for testing purposes
 function sleep(ms) {
